@@ -5,7 +5,7 @@ import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-cyber-menu',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, RouterLink],
   templateUrl: './cyber-menu.component.html',
   styleUrl: './cyber-menu.component.scss',
 })
