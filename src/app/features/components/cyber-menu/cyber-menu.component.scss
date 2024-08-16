@@ -37,6 +37,10 @@
   opacity: 1;
   z-index: 1000;
   background-color: $dropdown-menu-bg-color;
+  display: flex; /* Add this line */
+  flex-direction: column; /* Add this line */
+  align-items: center; /* Add this line */
+
   &.light {
     background-color: #757575;
   }
