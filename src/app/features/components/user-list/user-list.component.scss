@@ -1,9 +1,12 @@
-// src/app/components/user-list/user-list.component.scss
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
+@import "../../../styles/colors";
+
 section {
   max-width: 800px;
   margin: 20px auto;
   padding: 20px;
-  background-color: #f1f1f1;
+  background-color: $user-list-section-bg-color;
   border-radius: 5px;
 
   table {
@@ -13,38 +16,38 @@ section {
 
     th,
     td {
-      border: 1px solid #ccc;
+      border: 1px solid $user-list-table-border-color;
       padding: 10px;
       text-align: left;
     }
 
     th {
-      background-color: #e2e2e2;
+      background-color: $user-list-table-header-bg-color;
     }
 
     tr:nth-child(even) {
-      background-color: #fafafa;
+      background-color: $user-list-table-row-even-bg-color;
     }
   }
 
   button {
     padding: 5px 10px;
     margin-right: 5px;
-    background-color: #dc3545;
-    color: #fff;
+    background-color: $user-list-button-bg-color;
+    color: $user-list-button-text-color;
     border: none;
     border-radius: 3px;
     cursor: pointer;
 
     &:hover {
-      background-color: #c82333;
+      background-color: $user-list-button-hover-bg-color;
     }
 
     & + button {
-      background-color: #28a745;
+      background-color: $user-list-button-secondary-bg-color;
 
       &:hover {
-        background-color: #218838;
+        background-color: $user-list-button-secondary-hover-bg-color;
       }
     }
   }

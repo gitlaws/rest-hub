@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { CardComponent } from '../card/card.component';
 import { UserManagementComponent } from '../user-management/user-management.component';
 import { UserFormComponent } from '../user-form/user-form.component';
+import { UserListComponent } from '../user-list/user-list.component';
 
 @Component({
   selector: 'app-component-documentation',
@@ -12,6 +13,7 @@ import { UserFormComponent } from '../user-form/user-form.component';
     CardComponent,
     UserManagementComponent,
     UserFormComponent,
+    UserListComponent,
   ],
   templateUrl: './component-documentation.component.html',
   styleUrl: './component-documentation.component.scss',

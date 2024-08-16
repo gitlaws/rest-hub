@@ -1,13 +1,17 @@
 <div class="wrapper">
-  <h1 class="heading">CRUD Tools</h1>
+  <h1 class="heading">CRUD Stuff</h1>
 
   <app-card
     [iconClasses]="'fas fa-info-circle'"
-    [title]="'Empty'"
-    [subTitle]="'Component'"
+    [title]="'Users'"
+    [subTitle]="'CRUD Component'"
   >
     <div body>
       <app-user-form></app-user-form>
+    </div>
+
+    <div footer>
+      <app-user-list></app-user-list>
     </div>
   </app-card>
 </div>

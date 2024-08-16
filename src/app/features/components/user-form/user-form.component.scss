@@ -6,11 +6,11 @@ section {
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
-  background-color: $section-bg-color;
+  background-color: $user-form-section-bg-color;
   border-radius: 5px;
 
   .form-heading {
-    color: $form-heading-color; /* Add this line for h2 color */
+    color: $user-form-heading-color; /* Add this line for h2 color */
   }
 
   .form-group {
@@ -26,21 +26,21 @@ section {
       box-sizing: border-box;
     }
     div {
-      color: $error-color;
+      color: $user-form-error-color;
       font-size: 0.8em;
     }
   }
 
   button {
     padding: 10px 20px;
-    background-color: $button-bg-color;
-    color: $button-text-color;
+    background-color: $user-form-button-bg-color;
+    color: $user-form-button-text-color;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 
     &:hover {
-      background-color: $button-hover-bg-color;
+      background-color: $user-form-button-hover-bg-color;
     }
   }
 }
