@@ -3,37 +3,46 @@
 @import "../../../styles/colors";
 
 section {
-  max-width: 600px;
+  max-width: 100%;
   margin: 0 auto;
   padding: 20px;
   background-color: $user-form-section-bg-color;
   border-radius: 5px;
 
+  @media (min-width: 600px) {
+    max-width: 600px;
+  }
+
   .form-heading {
-    color: $user-form-heading-color; /* Add this line for h2 color */
+    color: $user-form-heading-color;
+    margin-bottom: 20px; // Adjust margin for better spacing
   }
 
   .form-group {
-    margin-bottom: 15px;
+    margin-bottom: 20px; // Increase margin-bottom for more space between form elements
+
     label {
       display: block;
-      margin-bottom: 5px;
+      margin-bottom: 10px; // Adjust margin for better spacing
       font-weight: bold;
       color: $user-form-label-color;
     }
+
     input {
       width: 100%;
-      padding: 8px;
+      padding: 10px; // Increase padding for better touch targets
       box-sizing: border-box;
     }
+
     div {
       color: $user-form-error-color;
       font-size: 0.8em;
+      margin-top: 5px; // Add margin-top for spacing between input and error message
     }
   }
 
   button {
-    padding: 10px 20px;
+    padding: 15px 25px; // Increase padding for larger touch targets
     background-color: $user-form-button-bg-color;
     color: $user-form-button-text-color;
     border: none;
@@ -43,5 +52,38 @@ section {
     &:hover {
       background-color: $user-form-button-hover-bg-color;
     }
+  }
+}
+
+// Flexbox for form layout
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; // Add gap for consistent spacing between form elements
+}
+
+// Responsive adjustments
+@media (min-width: 768px) {
+  section {
+    padding: 30px; // Increase padding for larger screens
+  }
+
+  .form-heading {
+    font-size: 1.5em; // Adjust font size for better readability
+    line-height: 1.4; // Adjust line height for vertical rhythm
+  }
+
+  .form-group {
+    label {
+      font-size: 1.1em; // Adjust font size for better readability
+    }
+
+    input {
+      padding: 12px; // Adjust padding for larger screens
+    }
+  }
+
+  button {
+    padding: 15px 30px; // Adjust padding for larger screens
   }
 }
