@@ -5,6 +5,7 @@ import { UserListComponent } from './features/components/user-list/user-list.com
 import { UserFormComponent } from './features/components/user-form/user-form.component';
 import { ToolbarComponent } from './features/components/toolbar/toolbar.component';
 import { CommonModule } from '@angular/common';
+import { ComponentDocumentationComponent } from './features/components/component-documentation/component-documentation.component';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +17,7 @@ import { CommonModule } from '@angular/common';
     UserListComponent,
     UserFormComponent,
     ToolbarComponent,
+    ComponentDocumentationComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
