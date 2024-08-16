@@ -1,18 +1,11 @@
-<header class="header">
-  <a routerLink="/Home" class="header__logo" title="Home">
-    <app-cube-logo></app-cube-logo>
-  </a>
-  <!-- Items -->
-  <nav class="header__nav">
-    <!-- Links -->
-
-    <a routerLink="/components" class="nav__item-link">Components</a>
-    <a routerLink="/services" class="nav__item-link">Services</a>
-    <a routerLink="/pipes" class="nav__item-link">Pipes</a>
-    <a routerLink="/directives" class="nav__item-link">Directives</a>
-    <!-- <a routerLink="/apis" class="nav__item-link">APIs</a> -->
-    <a routerLink="/other" class="nav__item-link">Other</a>
-  </nav>
-
-  <app-cyber-menu class="header__menu"></app-cyber-menu>
-</header>
+<div class="cube-wrapper">
+  <div class="cube">
+    <div class="face front"></div>
+    <div class="face back"></div>
+    <div class="face right"></div>
+    <div class="face left"></div>
+    <div class="face top"></div>
+    <div class="face bottom"></div>
+  </div>
+  <div class="shadow"></div>
+</div>
