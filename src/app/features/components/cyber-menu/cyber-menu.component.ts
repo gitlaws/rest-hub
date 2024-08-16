@@ -1,5 +1,12 @@
-import { CommonModule } from '@angular/common';
-import { Component, OnDestroy, ElementRef, HostListener } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import {
+  Component,
+  OnDestroy,
+  ElementRef,
+  HostListener,
+  Inject,
+  PLATFORM_ID,
+} from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -12,10 +19,15 @@ import { RouterLink } from '@angular/router';
 export class CyberMenuComponent implements OnDestroy {
   isMenuOpen = false;
 
-  constructor(private elementRef: ElementRef) {}
+  constructor(
+    private elementRef: ElementRef,
+    @Inject(PLATFORM_ID) private platformId: Object
+  ) {}
 
   ngOnDestroy(): void {
-    this.removeDocumentClickListener();
+    if (isPlatformBrowser(this.platformId)) {
+      this.removeDocumentClickListener();
+    }
   }
 
   toggleMenu(event: MouseEvent) {
@@ -37,10 +49,17 @@ export class CyberMenuComponent implements OnDestroy {
   }
 
   private addDocumentClickListener() {
-    document.addEventListener('click', this.documentClickHandler.bind(this));
+    if (isPlatformBrowser(this.platformId)) {
+      document.addEventListener('click', this.documentClickHandler.bind(this));
+    }
   }
 
   private removeDocumentClickListener() {
-    document.removeEventListener('click', this.documentClickHandler.bind(this));
+    if (isPlatformBrowser(this.platformId)) {
+      document.removeEventListener(
+        'click',
+        this.documentClickHandler.bind(this)
+      );
+    }
   }
 }
