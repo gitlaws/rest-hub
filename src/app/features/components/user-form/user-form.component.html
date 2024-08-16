@@ -1,6 +1,6 @@
 <!-- src/app/components/user-form/user-form.component.html -->
 <section>
-  <h2>{{ isEditMode ? "Edit User" : "Add User" }}</h2>
+  <h2 class="form-heading">{{ isEditMode ? "Edit User" : "Add User" }}</h2>
   <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label>Name</label>

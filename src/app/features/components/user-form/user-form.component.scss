@@ -1,10 +1,17 @@
-// src/app/components/user-form/user-form.component.scss
+@import "../../../styles/variables";
+@import "../../../styles/mixins";
+@import "../../../styles/colors";
+
 section {
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #f9f9f9;
+  background-color: $section-bg-color;
   border-radius: 5px;
+
+  .form-heading {
+    color: $form-heading-color; /* Add this line for h2 color */
+  }
 
   .form-group {
     margin-bottom: 15px;
@@ -19,21 +26,21 @@ section {
       box-sizing: border-box;
     }
     div {
-      color: red;
+      color: $error-color;
       font-size: 0.8em;
     }
   }
 
   button {
     padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
+    background-color: $button-bg-color;
+    color: $button-text-color;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 
     &:hover {
-      background-color: #0056b3;
+      background-color: $button-hover-bg-color;
     }
   }
 }
