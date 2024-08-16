@@ -13,6 +13,10 @@ section {
     max-width: 600px;
   }
 
+  @media (min-width: 1024px) {
+    max-width: 800px;
+  }
+
   .form-heading {
     color: $user-form-heading-color;
     margin-bottom: 20px; // Adjust margin for better spacing
