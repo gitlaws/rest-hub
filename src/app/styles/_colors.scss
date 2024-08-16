@@ -24,7 +24,6 @@ $warning-color: #ffff00;
 $black-color: rgba(33, 33, 33, 1);
 
 /* App-Card Colors */
-
 $card-header-color: #2a2a2a;
 $card-body-footer-color: #3a3a3a;
 
@@ -38,12 +37,14 @@ $user-form-button-text-color: #e0e0e0;
 $user-form-heading-color: #e0e0e0;
 
 /* User-List Colors */
-$user-list-section-bg-color: #2a2a2a; /* Darker background for section */
-$user-list-table-border-color: #444444; /* Dark grey for table borders */
-$user-list-table-header-bg-color: #3a3a3a; /* Darker grey for table headers */
-$user-list-table-row-even-bg-color: #333333; /* Dark grey for even rows */
-$user-list-button-bg-color: #6a0dad; /* Darker blue for buttons */
-$user-list-button-hover-bg-color: #4b0082; /* Even darker blue for button hover */
-$user-list-button-secondary-bg-color: #28a745; /* Dark green for secondary buttons */
-$user-list-button-secondary-hover-bg-color: #218838; /* Darker green for secondary button hover */
-$user-list-button-text-color: #e0e0e0; /* Light grey for button text */
+$user-list-section-bg-color: #2a2a2a;
+$user-list-table-border-color: #444444;
+$user-list-table-header-bg-color: #3a3a3a;
+$user-list-table-row-even-bg-color: #333333;
+$user-list-button-bg-color: #6a0dad;
+$user-list-button-hover-bg-color: #4b0082;
+$user-list-button-secondary-bg-color: #28a745;
+$user-list-button-secondary-hover-bg-color: #218838;
+$user-list-button-text-color: #e0e0e0;
+$user-list-heading-color: #e0e0e0;
+$user-list-tc-text-color: #f0f0f0;
