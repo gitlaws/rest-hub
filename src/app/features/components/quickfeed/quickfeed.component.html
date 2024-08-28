@@ -1,1 +1,8 @@
-<p>quickfeed works!</p>
+<div class="feed-container">
+  <app-notification></app-notification>
+  <app-create-post></app-create-post>
+  <div *ngFor="let post of posts">
+    <app-post [post]="post"></app-post>
+  </div>
+</div>
+
