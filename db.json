@@ -1,14 +1,7 @@
 {
   "users": [
     {
-      "id": 0,
-      "name": "Stanislaw Marcin Wasilewski",
-      "email": "lawmski@gmail.com",
-      "mobile": "111-118-1986",
-      "age": 37
-    },
-    {
-      "id": 0,
+      "id": "0",
       "name": "test",
       "email": "test@gmail.com",
       "mobile": "1231231234",
