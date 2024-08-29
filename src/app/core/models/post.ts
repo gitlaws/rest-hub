@@ -11,6 +11,7 @@ export interface Comment {
 }
 
 export interface Post {
+  showComments: boolean;
   id: number;
   content: string;
   comments: Comment[];

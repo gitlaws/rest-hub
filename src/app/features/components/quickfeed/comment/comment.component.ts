@@ -1,11 +1,12 @@
 import { Component, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Comment, User } from '../../../../core/models/comment.model';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-comment',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, CommonModule],
   templateUrl: './comment.component.html',
   styleUrl: './comment.component.scss',
 })

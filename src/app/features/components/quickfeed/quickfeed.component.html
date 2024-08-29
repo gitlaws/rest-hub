@@ -7,8 +7,8 @@
   <div *ngFor="let post of posts">
     <app-post
       [post]="post"
-      (like)="onLikePost(post.id)"
-      (toggleComments)="onToggleComments(post.id)"
+      (like)="onLikePost(post)"
+      (toggleComments)="onToggleComments(post)"
     ></app-post>
   </div>
 </div>

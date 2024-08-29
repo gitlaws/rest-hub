@@ -48,7 +48,11 @@ export class QuickfeedComponent implements OnInit {
   }
 
   onToggleComments(postId: number) {
-    // Handle comment toggling logic
+    const post = this.posts.find((p) => p.id === postId);
+    if (post) {
+      post.showComments = !post.showComments;
+      // Additional logic to handle comment toggling
+    }
   }
 
   showNotification(message: string) {
