@@ -11,15 +11,22 @@ import { CommonModule } from '@angular/common';
 })
 export class PostComponent {
   @Input() post: any;
+  @Output() like = new EventEmitter<number>();
+  @Output() toggleComments = new EventEmitter<number>();
 
   showComments = false;
+  isLiking = false;
 
   toggleComments() {
     this.showComments = !this.showComments;
+    this.toggleComments.emit(this.post.id);
   }
 
   likePost(postId: number) {
-    // Implement like functionality
-    console.log(`Post ${postId} liked!`);
+    this.isLiking = true;
+    this.like.emit(postId);
+    setTimeout(() => {
+      this.isLiking = false;
+    }, 1000); // Simulate a delay for the like action
   }
 }

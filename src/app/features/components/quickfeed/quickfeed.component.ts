@@ -22,10 +22,39 @@ import { CommentComponent } from './comment/comment.component';
 })
 export class QuickfeedComponent implements OnInit {
   posts: Post[] = [];
+  notificationMessage: string | null = null;
 
-  constructor(private postService: PostService) {} // Corrected from PostService to postService
+  constructor(private postService: PostService) {}
 
-  ngOnInit(): void {
-    this.postService.getPosts().subscribe((posts) => (this.posts = posts));
+  ngOnInit() {
+    this.loadPosts();
+  }
+
+  loadPosts() {
+    this.postService.getPosts().subscribe((posts) => {
+      this.posts = posts;
+    });
+  }
+
+  onPostCreated(post: Post) {
+    this.posts.unshift(post);
+    this.showNotification('Post created successfully!');
+  }
+
+  onLikePost(postId: number) {
+    this.postService.likePost(postId).subscribe(() => {
+      this.showNotification('Post liked!');
+    });
+  }
+
+  onToggleComments(postId: number) {
+    // Handle comment toggling logic
+  }
+
+  showNotification(message: string) {
+    this.notificationMessage = message;
+    setTimeout(() => {
+      this.notificationMessage = null;
+    }, 3000);
   }
 }
