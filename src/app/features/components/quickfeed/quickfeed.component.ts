@@ -49,7 +49,6 @@ export class QuickfeedComponent implements OnInit {
 
   onToggleComments(post: Post) {
     post.showComments = !post.showComments;
-    // Additional logic to handle comment toggling
   }
 
   showNotification(message: string) {

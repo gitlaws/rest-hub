@@ -12,12 +12,11 @@ import { Post } from '../../../../core/models/post';
 })
 export class CreatePostComponent {
   newPostContent: string = '';
-  post: Post; // Add a Post object
+  post: Post;
 
-  @Output() postCreated = new EventEmitter<Post>(); // Add EventEmitter
+  @Output() postCreated = new EventEmitter<Post>();
 
   constructor(private postService: PostService) {
-    // Initialize the Post object
     this.post = {
       id: 0,
       content: '',
@@ -28,20 +27,21 @@ export class CreatePostComponent {
 
   createPost() {
     if (this.newPostContent.trim()) {
-      // Implement post creation logic
       const newPost: Post = {
-        showComments: false,
-        id: 1,
-        content: this.newPostContent, // Use the newPostContent
+        id: Date.now(), // Use a unique ID
+        content: this.newPostContent,
         comments: [],
+        showComments: false,
+        user: { name: 'User1', id: 1, profilePicture: 'path/to/profile1.jpg' },
+        createdAt: new Date(),
+        image: 'path/to/image.jpg',
       };
       this.postCreated.emit(newPost);
-      this.newPostContent = ''; // Clear the input after emitting
+      this.newPostContent = '';
     }
   }
 
   handleClick(post: Post) {
-    // Handle the Post object
     console.log(post);
   }
 }

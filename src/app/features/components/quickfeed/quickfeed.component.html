@@ -1,5 +1,5 @@
 <div class="feed-container">
-   <app-create-post (postCreated)="onPostCreated($event)"></app-create-post>
+  <app-create-post (postCreated)="onPostCreated($event)"></app-create-post>
   <app-notification
     *ngIf="notificationMessage"
     [message]="notificationMessage"
@@ -8,7 +8,7 @@
     <app-post
       [post]="post"
       (like)="onLikePost(post)"
-      (toggleComments)="onToggleComments(post)"
+      (commentsToggled)="onToggleComments(post)"
     ></app-post>
   </div>
 </div>

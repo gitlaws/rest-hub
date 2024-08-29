@@ -1,6 +1,7 @@
-// post.model.ts
+// models/post.ts
 export interface User {
   name: string;
+  id: number;
   profilePicture: string;
 }
 
@@ -11,8 +12,11 @@ export interface Comment {
 }
 
 export interface Post {
-  showComments: boolean;
   id: number;
   content: string;
   comments: Comment[];
+  showComments: boolean;
+  user?: { name: string; id: number; profilePicture: string };
+  createdAt?: Date;
+  image?: string;
 }

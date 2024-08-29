@@ -11,17 +11,16 @@ import { Post } from '../../../../core/models/post';
   styleUrls: ['./post.component.scss'],
 })
 export class PostComponent {
-  @Input()
-  post!: Post; // Use the Post interface
+  @Input() post!: Post;
   @Output() like = new EventEmitter<number>();
-  @Output() commentsToggled = new EventEmitter<number>(); // Renamed to avoid conflict
+  @Output() commentsToggled = new EventEmitter<number>();
 
   showComments = false;
   isLiking = false;
 
   toggleComments() {
     this.showComments = !this.showComments;
-    this.commentsToggled.emit(this.post.id); // Updated to use the renamed property
+    this.commentsToggled.emit(this.post.id);
   }
 
   likePost(postId: number) {
@@ -29,6 +28,6 @@ export class PostComponent {
     this.like.emit(postId);
     setTimeout(() => {
       this.isLiking = false;
-    }, 1000); // Simulate a delay for the like action
+    }, 1000);
   }
 }

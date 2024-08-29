@@ -56,3 +56,34 @@ export class PostService {
     return this.http.post<void>(`${this.apiUrl}/${postId}/like`, {});
   }
 }
+
+// Somewhere in your component or service where you want to create a post
+this.postService
+  .createPost({
+    id: 1,
+    content: 'Post content',
+    comments: [],
+    showComments: false,
+    user: { name: 'User1', id: 1, profilePicture: 'path/to/profile1.jpg' }, // Add user
+    createdAt: new Date(), // Add createdAt
+    image: 'path/to/image.jpg', // Add image if applicable
+  })
+  .subscribe(
+    (response) => {
+      console.log('Post created successfully', response);
+    },
+    (error) => {
+      console.error('Error creating post', error);
+    }
+  );
+
+// Assigning a new post object
+this.post = {
+  id: 1,
+  content: 'New post content',
+  comments: [],
+  showComments: false,
+  user: { name: 'User1', id: 1, profilePicture: 'path/to/profile1.jpg' }, // Add user
+  createdAt: new Date(), // Add createdAt
+  image: 'path/to/image.jpg', // Add image if applicable
+};
