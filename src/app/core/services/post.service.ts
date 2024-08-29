@@ -2,13 +2,31 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError } from 'rxjs/operators';
-import { Post } from '../models/post';
+
+interface User {
+  name: string;
+  profilePicture: string;
+  id: number;
+}
+
+interface Comment {
+  user: User;
+  text: string;
+  createdAt: Date;
+}
+
+interface Post {
+  id: number;
+  content: string;
+  comments: Comment[];
+  showComments: boolean;
+}
 
 @Injectable({
   providedIn: 'root',
 })
 export class PostService {
-  private apiUrl = 'https://your-backend-url/api/posts';
+  private apiUrl = 'https://api.example.com/posts';
 
   constructor(private http: HttpClient) {}
 
@@ -19,7 +37,11 @@ export class PostService {
         content: 'This is the first post',
         comments: [
           {
-            user: { name: 'User1', profilePicture: 'path/to/profile-pic1' },
+            user: {
+              name: 'User1',
+              profilePicture: 'path/to/profile-pic1',
+              id: 0,
+            },
             text: 'This is a comment on the first post',
             createdAt: new Date(),
           },
@@ -31,7 +53,11 @@ export class PostService {
         content: 'This is the second post',
         comments: [
           {
-            user: { name: 'User2', profilePicture: 'path/to/profile-pic2' },
+            user: {
+              name: 'User2',
+              profilePicture: 'path/to/profile-pic2',
+              id: 0,
+            },
             text: 'This is a comment on the second post',
             createdAt: new Date(),
           },
@@ -56,34 +82,3 @@ export class PostService {
     return this.http.post<void>(`${this.apiUrl}/${postId}/like`, {});
   }
 }
-
-// Somewhere in your component or service where you want to create a post
-this.postService
-  .createPost({
-    id: 1,
-    content: 'Post content',
-    comments: [],
-    showComments: false,
-    user: { name: 'User1', id: 1, profilePicture: 'path/to/profile1.jpg' }, // Add user
-    createdAt: new Date(), // Add createdAt
-    image: 'path/to/image.jpg', // Add image if applicable
-  })
-  .subscribe(
-    (response) => {
-      console.log('Post created successfully', response);
-    },
-    (error) => {
-      console.error('Error creating post', error);
-    }
-  );
-
-// Assigning a new post object
-this.post = {
-  id: 1,
-  content: 'New post content',
-  comments: [],
-  showComments: false,
-  user: { name: 'User1', id: 1, profilePicture: 'path/to/profile1.jpg' }, // Add user
-  createdAt: new Date(), // Add createdAt
-  image: 'path/to/image.jpg', // Add image if applicable
-};
