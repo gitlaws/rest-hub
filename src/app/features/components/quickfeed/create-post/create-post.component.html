@@ -1,1 +1,4 @@
-<p>create-post works!</p>
+<div class="create-post-container">
+  <textarea [(ngModel)]="newPostContent" placeholder="What's on your mind?"></textarea>
+  <button (click)="createPost()">Post</button>
+</div>
