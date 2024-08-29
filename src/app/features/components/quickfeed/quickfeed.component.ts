@@ -5,6 +5,7 @@ import { PostComponent } from './post/post.component';
 import { Post } from '../../../core/models/post';
 import { NotificationComponent } from './notification/notification.component';
 import { CreatePostComponent } from './create-post/create-post.component';
+import { CommentComponent } from './comment/comment.component';
 
 @Component({
   selector: 'app-quickfeed',
@@ -14,6 +15,7 @@ import { CreatePostComponent } from './create-post/create-post.component';
     PostComponent,
     NotificationComponent,
     CreatePostComponent,
+    CommentComponent,
   ],
   templateUrl: './quickfeed.component.html',
   styleUrls: ['./quickfeed.component.scss'], // Corrected from styleUrl to styleUrls

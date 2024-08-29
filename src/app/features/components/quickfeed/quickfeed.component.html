@@ -3,5 +3,6 @@
   <app-create-post></app-create-post>
   <div *ngFor="let post of posts">
     <app-post [post]="post"></app-post>
+    <app-comment [comments]="post.comments"></app-comment>
   </div>
 </div>
