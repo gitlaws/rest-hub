@@ -6,27 +6,22 @@
       class="profile-pic"
     />
     <div>
-      <h3>{{ post.user.name }}</h3>
-      <p>{{ post.createdAt | date : "short" }}</p>
+      <h4>{{ post.user.name }}</h4>
+      <p>{{ post.createdAt | date }}</p>
     </div>
   </div>
-
   <div class="post-content">
     <p>{{ post.content }}</p>
     <img
-      *ngIf="post.imageUrl"
-      [src]="post.imageUrl"
+      *ngIf="post.image"
+      [src]="post.image"
       alt="Post Image"
       class="post-image"
     />
   </div>
-
   <div class="post-actions">
-    <button (click)="likePost(post.id)">Like ({{ post.likesCount }})</button>
-    <button (click)="toggleComments()">
-      Comments ({{ post.comments.length }})
-    </button>
+    <button (click)="likePost(post.id)">Like</button>
+    <button (click)="toggleComments()">Comments</button>
   </div>
-
   <app-comment *ngIf="showComments" [comments]="post.comments"></app-comment>
 </div>

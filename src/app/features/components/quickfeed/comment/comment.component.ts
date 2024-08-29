@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Comment } from '../../../../core/models/comment.model';
 
 @Component({
   selector: 'app-comment',
@@ -15,6 +16,11 @@ export class CommentComponent {
   addComment() {
     if (this.newCommentText.trim()) {
       // Implement adding comment logic
+      this.comments.push({
+        user: { name: 'Current User', profilePicture: 'path/to/profile-pic' },
+        text: this.newCommentText,
+        createdAt: new Date(),
+      });
       this.newCommentText = '';
     }
   }

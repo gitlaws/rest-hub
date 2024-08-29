@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./post.component.scss'],
 })
 export class PostComponent {
-  @Input() post: any; // Replace 'any' with the appropriate type
+  @Input() post: any;
 
   showComments = false;
 
@@ -20,5 +20,6 @@ export class PostComponent {
 
   likePost(postId: number) {
     // Implement like functionality
+    console.log(`Post ${postId} liked!`);
   }
 }
