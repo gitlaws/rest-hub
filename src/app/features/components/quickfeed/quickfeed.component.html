@@ -1,7 +1,14 @@
 <div class="feed-container">
   <app-create-post (postCreated)="onPostCreated($event)"></app-create-post>
-  <app-notification *ngIf="notificationMessage" [message]="notificationMessage"></app-notification>
+  <app-notification
+    *ngIf="notificationMessage"
+    [message]="notificationMessage"
+  ></app-notification>
   <div *ngFor="let post of posts">
-    <app-post [post]="post" (like)="onLikePost($event)" (toggleComments)="onToggleComments($event)"></app-post>
+    <app-post
+      [post]="post"
+      (like)="onLikePost(post.id)"
+      (toggleComments)="onToggleComments(post.id)"
+    ></app-post>
   </div>
 </div>

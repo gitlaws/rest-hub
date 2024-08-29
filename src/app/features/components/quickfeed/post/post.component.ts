@@ -1,6 +1,6 @@
-import { Component, Input } from '@angular/core';
-import { CommentComponent } from '../comment/comment.component';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { CommentComponent } from '../comment/comment.component';
 
 @Component({
   selector: 'app-post',
@@ -12,14 +12,14 @@ import { CommonModule } from '@angular/common';
 export class PostComponent {
   @Input() post: any;
   @Output() like = new EventEmitter<number>();
-  @Output() toggleComments = new EventEmitter<number>();
+  @Output() commentsToggled = new EventEmitter<number>(); // Renamed to avoid conflict
 
   showComments = false;
   isLiking = false;
 
   toggleComments() {
     this.showComments = !this.showComments;
-    this.toggleComments.emit(this.post.id);
+    this.commentsToggled.emit(this.post.id); // Updated to use the renamed property
   }
 
   likePost(postId: number) {

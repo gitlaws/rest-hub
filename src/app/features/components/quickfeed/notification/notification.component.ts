@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { NotificationService } from '../../../../core/services/notification.service';
 import { Notification } from '../../../../core/models/notification.model';
 
@@ -11,6 +11,7 @@ import { Notification } from '../../../../core/models/notification.model';
   styleUrl: './notification.component.scss',
 })
 export class NotificationComponent {
+  @Input() message!: string;
   notifications: Notification[] = [];
 
   constructor(private notificationService: NotificationService) {}

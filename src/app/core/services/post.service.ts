@@ -49,4 +49,8 @@ export class PostService {
   createPost(post: Post): Observable<Post> {
     return this.http.post<Post>(this.apiUrl, post);
   }
+
+  likePost(postId: number): Observable<void> {
+    return this.http.post<void>(`${this.apiUrl}/${postId}/like`, {});
+  }
 }
