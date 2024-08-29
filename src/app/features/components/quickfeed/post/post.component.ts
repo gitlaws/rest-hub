@@ -11,7 +11,8 @@ import { Post } from '../../../../core/models/post';
   styleUrls: ['./post.component.scss'],
 })
 export class PostComponent {
-  @Input() post: Post; // Use the Post interface
+  @Input()
+  post!: Post; // Use the Post interface
   @Output() like = new EventEmitter<number>();
   @Output() commentsToggled = new EventEmitter<number>(); // Renamed to avoid conflict
 

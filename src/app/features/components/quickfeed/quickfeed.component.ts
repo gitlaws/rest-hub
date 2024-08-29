@@ -36,8 +36,8 @@ export class QuickfeedComponent implements OnInit {
     });
   }
 
-  onPostCreated(post: Post) {
-    this.posts.unshift(post);
+  onPostCreated(newPost: Post) {
+    this.posts.unshift(newPost);
     this.showNotification('Post created successfully!');
   }
 
