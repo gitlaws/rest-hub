@@ -1,1 +1,32 @@
-<p>post works!</p>
+<div class="post-container">
+  <div class="post-header">
+    <img
+      [src]="post.user.profilePicture"
+      alt="User Profile"
+      class="profile-pic"
+    />
+    <div>
+      <h3>{{ post.user.name }}</h3>
+      <p>{{ post.createdAt | date : "short" }}</p>
+    </div>
+  </div>
+
+  <div class="post-content">
+    <p>{{ post.content }}</p>
+    <img
+      *ngIf="post.imageUrl"
+      [src]="post.imageUrl"
+      alt="Post Image"
+      class="post-image"
+    />
+  </div>
+
+  <div class="post-actions">
+    <button (click)="likePost(post.id)">Like ({{ post.likesCount }})</button>
+    <button (click)="toggleComments()">
+      Comments ({{ post.comments.length }})
+    </button>
+  </div>
+
+  <app-comment *ngIf="showComments" [comments]="post.comments"></app-comment>
+</div>
