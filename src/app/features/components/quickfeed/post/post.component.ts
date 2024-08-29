@@ -1,6 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CommentComponent } from '../comment/comment.component';
+import { Post } from '../../../../core/models/post';
 
 @Component({
   selector: 'app-post',
@@ -10,7 +11,7 @@ import { CommentComponent } from '../comment/comment.component';
   styleUrls: ['./post.component.scss'],
 })
 export class PostComponent {
-  @Input() post: any;
+  @Input() post: Post; // Use the Post interface
   @Output() like = new EventEmitter<number>();
   @Output() commentsToggled = new EventEmitter<number>(); // Renamed to avoid conflict
 

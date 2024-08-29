@@ -11,13 +11,27 @@ import { FormsModule } from '@angular/forms';
 })
 export class CreatePostComponent {
   newPostContent: string = '';
+  post: Post; // Add a Post object
 
-  constructor(private postService: PostService) {}
+  constructor(private postService: PostService) {
+    // Initialize the Post object
+    this.post = {
+      id: 0,
+      content: '',
+      comments: [],
+      showComments: false,
+    };
+  }
 
   createPost() {
     if (this.newPostContent.trim()) {
       // Implement post creation logic
       this.newPostContent = '';
     }
+  }
+
+  handleClick(post: Post) {
+    // Handle the Post object
+    console.log(post);
   }
 }

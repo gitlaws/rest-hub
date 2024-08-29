@@ -24,6 +24,7 @@ export class PostService {
             createdAt: new Date(),
           },
         ],
+        showComments: false,
       },
       {
         id: 2,
@@ -35,6 +36,7 @@ export class PostService {
             createdAt: new Date(),
           },
         ],
+        showComments: false,
       },
     ];
 

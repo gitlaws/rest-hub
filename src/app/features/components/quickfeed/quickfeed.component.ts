@@ -41,18 +41,15 @@ export class QuickfeedComponent implements OnInit {
     this.showNotification('Post created successfully!');
   }
 
-  onLikePost(postId: number) {
-    this.postService.likePost(postId).subscribe(() => {
+  onLikePost(post: Post) {
+    this.postService.likePost(post.id).subscribe(() => {
       this.showNotification('Post liked!');
     });
   }
 
-  onToggleComments(postId: number) {
-    const post = this.posts.find((p) => p.id === postId);
-    if (post) {
-      post.showComments = !post.showComments;
-      // Additional logic to handle comment toggling
-    }
+  onToggleComments(post: Post) {
+    post.showComments = !post.showComments;
+    // Additional logic to handle comment toggling
   }
 
   showNotification(message: string) {
