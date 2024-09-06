@@ -1,6 +1,12 @@
-// src/app/components/user-list/user-list.component.ts
 import { Component, OnInit } from '@angular/core';
-import { UserService, User } from '../../../core/services/user.service';
+import {
+  AuthService,
+  User as AuthUser,
+} from '../../../core/services/auth.service';
+import {
+  UserService,
+  User as UserServiceUser,
+} from '../../../core/services/user.service';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 
@@ -12,17 +18,39 @@ import { RouterModule } from '@angular/router';
   imports: [CommonModule, RouterModule],
 })
 export class UserListComponent implements OnInit {
-  users: User[] = [];
+  users: (AuthUser | UserServiceUser)[] = [];
+  currentUser: AuthUser | null = null;
 
-  constructor(private userService: UserService) {}
+  constructor(
+    private authService: AuthService,
+    private userService: UserService
+  ) {}
 
   ngOnInit(): void {
-    this.userService.getUsers().subscribe((data) => (this.users = data));
+    // Fetch authenticated user
+    this.authService.getCurrentUser().subscribe((user) => {
+      if (user) {
+        this.currentUser = user;
+        this.users.push(user);
+      }
+    });
+
+    // Fetch all users from UserService
+    this.userService.getUsers().subscribe((data) => {
+      this.users = [...this.users, ...data];
+    });
   }
 
   deleteUser(id: number): void {
+    // Remove user from UserService
     this.userService.deleteUser(id).subscribe(() => {
       this.users = this.users.filter((user) => user.id !== id);
     });
+
+    // Remove authenticated user if applicable
+    if (this.currentUser && this.currentUser.id === id) {
+      this.authService.signOut();
+      this.currentUser = null;
+    }
   }
 }
