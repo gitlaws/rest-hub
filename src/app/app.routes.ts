@@ -7,14 +7,23 @@ import { SignInComponent } from './features/components/sign-in/sign-in.component
 
 export const routes: Routes = [
   {
+    path: 'Home',
+    loadComponent: () =>
+      import(
+        './features/components/component-documentation/component-documentation.component'
+      ).then((component) => component.ComponentDocumentationComponent),
+  },
+
+  {
     path: 'components',
     loadComponent: () =>
       import(
         './features/components/component-documentation/component-documentation.component'
       ).then((component) => component.ComponentDocumentationComponent),
   },
-  { path: 'user-list', component: UserListComponent, canActivate: [AuthGuard] },
-  { path: 'user-form', component: UserFormComponent, canActivate: [AuthGuard] },
-  { path: 'sign-in', component: SignInComponent },
-  { path: '', redirectTo: '/sign-in', pathMatch: 'full' },
+
+  // { path: 'user-list', component: UserListComponent, canActivate: [AuthGuard] },
+  // { path: 'user-form', component: UserFormComponent, canActivate: [AuthGuard] },
+  // { path: 'sign-in', component: SignInComponent },
+  // { path: '', redirectTo: '/sign-in', pathMatch: 'full' },
 ];
