@@ -53,4 +53,9 @@ export class UserListComponent implements OnInit {
       this.currentUser = null;
     }
   }
+
+  // Provide a public method to access authService
+  signOut(): void {
+    this.authService.signOut();
+  }
 }

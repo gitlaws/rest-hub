@@ -1,5 +1,5 @@
 // src/app/components/user-form/user-form.component.ts
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import {
   FormBuilder,
   FormGroup,
@@ -21,6 +21,7 @@ import { CommonModule } from '@angular/common';
 export class UserFormComponent implements OnInit {
   userForm: FormGroup;
   isEditMode = false;
+  @Input() user: User | null = null;
 
   constructor(
     private fb: FormBuilder,
