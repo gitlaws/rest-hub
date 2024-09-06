@@ -1,33 +1,56 @@
 .sign-in-container {
-  width: 300px;
-  margin: auto;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  background-color: #fff;
+  width: 100%;
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 30px;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
 }
 
 .form-group {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .form-control {
   width: 100%;
-  padding: 8px;
-  border-radius: 4px;
+  padding: 10px;
+  border-radius: 5px;
   border: 1px solid #ccc;
+  background-color: #fff;
+  transition: border-color 0.3s;
+
+  &:focus {
+    border-color: #28a745;
+    outline: none;
+  }
 }
 
 .btn-primary {
-  background-color: #007bff;
+  width: 100%;
+  background-color: #6a0dad;
   color: white;
   border: none;
-  padding: 10px 15px;
-  border-radius: 4px;
+  padding: 12px;
+  border-radius: 5px;
   cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: #4b0082;
+  }
 }
 
 .error-message {
-  color: red;
-  margin-top: 10px;
+  color: #d9534f;
+  margin-top: 15px;
+  text-align: center;
 }
