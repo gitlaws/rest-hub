@@ -5,6 +5,7 @@ import { UserManagementComponent } from '../user-management/user-management.comp
 import { UserFormComponent } from '../user-form/user-form.component';
 import { UserListComponent } from '../user-list/user-list.component';
 import { SignInComponent } from '../sign-in/sign-in.component';
+import { UserProfileComponent } from '../user-profile/user-profile.component';
 
 @Component({
   selector: 'app-component-documentation',
@@ -16,6 +17,7 @@ import { SignInComponent } from '../sign-in/sign-in.component';
     UserFormComponent,
     UserListComponent,
     SignInComponent,
+    UserProfileComponent,
   ],
   templateUrl: './component-documentation.component.html',
   styleUrl: './component-documentation.component.scss',
