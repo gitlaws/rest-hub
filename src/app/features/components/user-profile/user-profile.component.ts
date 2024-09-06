@@ -1,11 +1,23 @@
+import { Component, OnInit } from '@angular/core';
+import { AuthService, User } from '../../../core/services/auth.service';
+import { UserFormComponent } from '../user-form/user-form.component';
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-user-profile',
-  standalone: true,
-  imports: [CommonModule],
   templateUrl: './user-profile.component.html',
-  styleUrl: './user-profile.component.scss',
+  styleUrls: ['./user-profile.component.scss'],
+  standalone: true,
+  imports: [CommonModule, UserFormComponent],
 })
-export class UserProfileComponent {}
+export class UserProfileComponent implements OnInit {
+  currentUser: User | null = null;
+
+  constructor(private authService: AuthService) {}
+
+  ngOnInit(): void {
+    this.authService.getCurrentUser().subscribe((user) => {
+      this.currentUser = user;
+    });
+  }
+}
