@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService, User } from '../../../core/services/auth.service';
+import {
+  AuthService,
+  User as AuthUser,
+} from '../../../core/services/auth.service';
 import { UserFormComponent } from '../user-form/user-form.component';
 import { CommonModule } from '@angular/common';
 
@@ -11,7 +14,7 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule, UserFormComponent],
 })
 export class UserProfileComponent implements OnInit {
-  currentUser: User | null = null;
+  currentUser: AuthUser | null = null;
 
   constructor(private authService: AuthService) {}
 
